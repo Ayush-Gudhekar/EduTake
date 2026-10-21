@@ -64,14 +64,20 @@ export default function TopNav({ onMenuToggle }) {
         {/* Dark/Light mode toggle */}
         <button
           onClick={toggleTheme}
-          className="p-2 rounded-xl text-slate-400 hover:text-amber-400 hover:bg-slate-800/80 transition-colors"
+          className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border border-slate-700/60 bg-slate-800/60 text-slate-300 hover:text-white hover:border-slate-600 transition-all text-xs"
           title={`Switch to ${state.theme === 'dark' ? 'Light' : 'Dark'} mode`}
           aria-label="Toggle theme"
         >
           {state.theme === 'dark' ? (
-            <Sun className="w-4 h-4 text-amber-400" />
+            <>
+              <Sun className="w-3.5 h-3.5 text-amber-400" />
+              <span className="hidden sm:inline font-medium">Light</span>
+            </>
           ) : (
-            <Moon className="w-4 h-4 text-indigo-400" />
+            <>
+              <Moon className="w-3.5 h-3.5 text-indigo-500" />
+              <span className="hidden sm:inline font-medium text-slate-700">Dark</span>
+            </>
           )}
         </button>
 
